@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "name": "aryan",
+    "builds": [
+        { "src": "index.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+        { "src": "/single", "dest": "/index.js" },
+        { "src": "/products", "dest": "/index.js" },
+        { "src": "/products/:productId", "dest": "/index.js" },
+        { "src": "/products/:categoryId", "dest": "/index.js" },
+        { "src": "/delete/:_id", "dest": "/index.js" },
+        { "src": "/cart/add/:productId", "dest": "/index.js" },
+        { "src": "/cart", "dest": "/index.js" },
+        { "src": "/cart/delete/:itemId", "dest": "/index.js" },
+        { "src": "/hero", "dest": "/index.js" },
+        { "src": "/hero/:filename", "dest": "/index.js" },
+        { "src": "/signup", "dest": "/index.js" },
+        { "src": "/login", "dest": "/index.js" },
+        { "src": "/users", "dest": "/index.js" }
+    ]
+}
