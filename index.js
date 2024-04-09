@@ -33,7 +33,6 @@ const storageEngine = multer.diskStorage({
 const upload = multer({ storage: storageEngine });
 
 
-
 app.post("/single", upload.single("image"), async (req, res) => {
     try {
         if (!req.file) {
@@ -76,6 +75,10 @@ app.get("/products", async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
+
+app.get('/', function (req, res) {
+    res.send('Hello World')
+  })
 
 app.get("/products/:productId", async (req, res) => {
     try {
