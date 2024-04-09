@@ -15,8 +15,8 @@ require('dotenv').config();
 
 const coreConfig = {
     origin: "*",
-    Credential: true,
-    methods: ["GET", "POST", "PUT", "DELETE"]
+    Credential:true,
+    methods:["GET" , "POST" , "PUT" , "DELETE"]
 }
 
 // Connect to MongoDB
@@ -57,8 +57,7 @@ app.post("/single", upload.single("image"), async (req, res) => {
 
         const newProduct = new Product(productData);
         await newProduct.save();
-        const presignedPost = await createPresignedPost(productData);
-        res.json({ file: req.file, presignedPost });
+
         res.send("Single file uploaded successfully and product created");
     } catch (error) {
         console.error(error);
@@ -85,7 +84,7 @@ app.get("/products", async (req, res) => {
 
 app.get('/', function (req, res) {
     res.send('Hello World')
-})
+  })
 
 app.get("/products/:productId", async (req, res) => {
     try {
